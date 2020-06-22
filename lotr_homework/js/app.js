@@ -211,7 +211,7 @@ const theBalrog = () => {
   // 2. add a class "the-white" to this element
 
   // 3. in the style.css file, add a css rule to make elements of the class "the-white" have a white background and a grey border
-
+  $('.buddy:contains("Gandalf")').text('Gandalf the White').addClass('the-white');
 };
 
 // COMMIT YOUR WORK
