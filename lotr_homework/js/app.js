@@ -81,7 +81,6 @@ const makeHobbits = () => {
   for (let i = 0; i < hobbits.length; i++) {
     const person = $(`<li class = "hobbit">${hobbits[i]}</li>`);
     newList.append(person);
-    console.log(person);
   }
 
 };
@@ -102,8 +101,9 @@ const keepItSecretKeepItSafe = () => {
   /*  const hobb = $(`.hobbit`); */
   const hobb = $(`.hobbit`);
   for (let i = 0; i < hobb.length; i++) {
-    if ($(hobb.eq(i).text() === `Frodo Baggins`)) {
-      $(hobb.eq(i).append(ring));
+    if (hobb.eq(i).text() === `Frodo Baggins`) {
+      hobb.eq(i).append(ring);
+      console.log(hobb.eq(i).text() === `Frodo Baggins`);
     }
   }
   /*   for (let i = 0; i < hobb.length; i++) {
@@ -239,9 +239,9 @@ const hornOfGondor = () => {
 const itsDangerousToGoAlone = () => {
 
   // 1. take Frodo and Sam out of the fellowship and move them to Mordor (they don't need to be inside a ul in Mordor)
-
   // 2. add a div with an id of 'mount-doom' to Mordor
-
+  $('#Mordor').append(`<div id="mount-doom"></div>`);
+  $('#mount-doom').append($('.hobbit:contains("Frodo")').remove(), $('.hobbit:contains("Samwise")').remove());
 };
 
 // COMMIT YOUR WORK
